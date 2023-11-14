@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head><title>Electron Configuration Calculator</title>
+    <style>
+        /* Add custom styles here */
+        .version {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Electron Configuration Calculator</h2>
+    <form method="POST">
+        <div>
+            <label>Enter Atomic Number or Symbol for Electron Configuration and Valence Electrons:</label>
+            <input type="text" name="atomic_input" placeholder="e.g., 11 or Na">
+            <input type="submit" value="Calculate">
+        </div>
+    </form>
+    {% if results %}
+        {% if results.type == 'config' %}
+            <p>Electron Configuration: {{ results.config }}</p>
+            <p>Valence Electrons: {{ results.valence_electrons }}</p>
+        {% elif results.type == 'sublevel' %}
+            <p>Maximum Electrons in {{ results.sublevel }}: {{ results.electrons }}</p>
+        {% endif %}
+    {% endif %}
+
+
+
+<div class="version">Alpha 0.01</div>
+</body>
+
+
+</html>
+        
