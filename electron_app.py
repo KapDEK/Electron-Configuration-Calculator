@@ -76,7 +76,7 @@ def index():
             results = {'type': 'sublevel', 'sublevel': sublevel, 'electrons': electrons}
 
         
-        return render_template('index.html', results=results)
+    return render_template('index.html', results=results)
 
 
 if __name__ == '__main__':
